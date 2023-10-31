@@ -1,38 +1,404 @@
 .App {
+  margin: 0px;
+  padding: 0px;
+  text-align: left;
+}
+
+/********Navbar section**************/
+.navbar{
+  width: 100%;
+  height: 10vh;
+  color: var(--primary_color);
+  border-bottom: 2px solid gray;
+}
+
+.navbar:hover{
+  border-bottom: 2px solid var(--secondary_color);
+}
+
+.left-nav,.right-nav{
+  margin: 15px 20px;
+  display: inline-block;
+}
+
+.right-nav{
+  float: right;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.btn{
+  margin-left: 20px;
+  padding: 5px 10px;
+  border: 1px solid var(--primary_color);
+  border-radius: 5px;
+  background-color: var(--secondary_color);
+  color: var(--primary_color);
+}
+
+.btn:hover{
+  transform: scale(1.1);
+  color: blue;
+  cursor: pointer;
+}
+
+/********&&&&&&&&&&&&&***********/
+
+/***#############Content Section###############***/
+.content-section{
+  width: 60%;
+  min-height: 70vh;
+  /* text-align: center; */
+  margin: 50px auto;
+  box-shadow: 5px 5px 10px 10px rgba(0, 0, 0,0.4);
+  padding: 20px;
+}
+
+.content-section:hover{
+  border: 1px solid var(--primary_color);
+  transform: scaleX(1.03);
+}
+
+/**********Todo section****************/
+.todo-section{
+  width: 100%;
+  color: var(--secondary_color);
+  margin-top: 12px;
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.todo-input,.reg-form-input,.temp-form-input{
+  margin-top: 8px;
+  padding: 5px;
+  border: 1px solid var(--primary_color);
+  outline: none;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.todo-input:hover{
+  border: solid 1px var(--secondary_color);
+  background-color: #ffffff;
+  border-radius: 8px;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+.todo-add-btn{
+  margin-top: 5px;
+  padding: 3px 20px;
+  border: 1px solid var(--primary_color);
+  border-radius: 5px;
+}
+
+.todo-add-btn:hover{
+  border: 1px solid var(--secondary_color);
+  color: blue;
+  font-size: 0.8rem;
+}
+
+.todo-add-btn:active{
+  transform: scale(1.1);
+}
+
+.show-todo-lists{
+  margin-top: 15px;
+}
+
+.todo-header:hover{
+  color: blue;
+}
+
+.todo-ol-list{
+  width: 40%;
+  margin: 15px auto;
+  list-style-type: none;
+}
+
+.todo-list{
+  width: 100%;
+  border-bottom: 1px solid var(--primary_color);
+  padding: 5px;
+  text-align: left;
+}
+
+.todo-list:hover{
+  border-bottom: 1px solid var(--secondary_color);
+}
+
+#list-word{
+  display: inline-block;
+  width: 85%;
+  overflow-wrap: break-word;
+}
+
+#todo-icon{
+  width: 10%;
+  float: right;
+}
+
+#todo-icon:hover{
+  color: red;
+}
+
+#todo-icon:active{
+  transform: scale(1.2);
+}
+
+/**************Registration form**************
+************************************************/
+.form-section{
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  justify-content: space-between;
+}
+
+.section-left-side{
+  width: 100%;
+  /* background-color: red; */
+}
+
+.section-right-side{
+  width: 100%;
+  overflow-wrap: break-word;
+  /* background-color: blue; */
+}
+
+.reg-form{
+  width: 80%;
+  margin: 0 auto;
+  color: var(--secondary_color);
+}
+
+.reg-form-input{
+  width: 15rem;
+  margin-bottom: 3px;
+}
+
+.reg-form-input:hover{
+  border: solid 1px var(--secondary_color);
+  background-color: var(--primary_color);
+  border-radius: 8px;
+}
+
+.radio{
+  display: inline-block;
+  margin-left: 10px;
+}
+
+#red:hover{
+  color: red;
+  cursor: pointer;
+}
+
+#green:hover{
+  color:green;
+  cursor: pointer;
+}
+
+#blue:hover{
+  color:blue;
+  cursor: pointer;
+}
+
+.submit-btn{
+  width: 15rem;
+  display: block;
+  margin: 8px 0px;
+  padding: 8px;
+  border: 1px solid var(--primary_color);
+  border-radius:8px;
+  outline: none;
+  font-weight: bold;
+  text-align: center;
+  transition: transform 0.2s;
+}
+
+.submit-btn:hover{
+  border: 1px solid var(--secondary_color);
+  color: blue;
+  cursor: pointer;
+}
+
+.submit-btn:active{
+  transform: scaleX(0.9);
+}
+
+.user-card{
+  width: 90%;
+  margin:25px auto;
   color: white;
+  text-align: center;
+  border-top-right-radius: 10px;
+  border-bottom-left-radius: 10px;
+  box-shadow: 3px 3px 5px 3px rgba(255, 255, 255,0.3);
 }
 
-.App-link {
-  color: #61dafb;
+.user-card:hover{
+  transform: scaleX(1.1);
+  border: 1px solid #fff;
+  cursor: pointer;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.user-info-header:hover{
+  color: gray;
+}
+
+.card-body{
+  margin-top: 20px;
+  text-align: center;
+}
+
+small{
+  color: red;
+  font-size: 0.6rem;
+}
+
+#input-error{
+  display: none;
+}
+
+/****%%%%%%%%%%%%%%%%%%%%%%%*******
+
+
+****************Calculat Temperature section********************/
+.temp-section{
+  text-align: center;
+  color: var(--secondary_color);
+}
+
+.temp-form-input{
+  padding: 7px;
+  width: 15rem;
+  margin-bottom: 8px;
+}
+
+.temp-form-input:hover{
+  border: solid 1px #fffcf2;
+  background-color: #ffffff;
+  border-radius: 8px;
+  padding: 8px;
+}
+
+
+/************Theme changer*******************/
+#check{
+  display: none;
+}
+
+.theme{
+  display: inline-block;
+  background-color: var(--secondary_color);
+  width: 5.1rem;
+  height: 2rem;
+  border-radius: 50px;
+  cursor: pointer;
+  position: relative;
+  box-shadow: inset 1px 1px 0 1px rgba(0, 0, 0,0.6),inset -1px -1px 0 1px rgba(0, 0, 0,0.6);
+  
+}
+
+.theme::before{
+  content: '';
+  position: absolute;
+  background-color: var(--primary_color);
+  width: 2.5rem;
+  height:1.6rem ;
+  border-radius: 50px;
+  margin: 3px;
+  z-index: 999;
+  transition: transform 0.2s;
+}
+
+#check:checked + .theme{
+  background-color: #fff;
+}
+
+#check:checked + .theme::before{
+  background-color: dark;
+  transform: translateX(2.3rem);
+}
+
+.sun{
+  color:yellow;
+  position: absolute;
+  left: 0.8rem;
+  top: 0.5rem;
+  z-index: 1;
+}
+
+.moon{
+  color:#fff;
+  position: absolute;
+  right: 0.8rem;
+  top: 0.5rem;
+  z-index: 1;
+}
+
+@media only screen and (max-width:950px){
+  .form-section{
+    grid-template-columns: 1fr;
+    text-align: center;
   }
-  to {
-    transform: rotate(360deg);
+
+  .reg-form{
+    width: 100%;
+  }
+
+  .submit-btn{
+    margin: 8px auto;
+  }
+}
+
+@media only screen and (max-width:590px){
+  .left-nav,.right-nav{
+    margin: 15px 0px;
+  }
+
+.content-section{
+  width: 80%;
+}
+
+.btn{
+  margin-left: 10px;
+}
+
+.theme{
+  width: 4.9rem;
+  height: 1.7rem;
+  border-radius: 50px;
+}
+
+.theme::before{
+  width: 2.4rem;
+  height:1.4rem ;
+}
+
+#check:checked + .theme::before{
+  transform: translateX(2rem);
+}
+
+.sun{
+  top: 0.3rem;
+}
+
+.moon{
+  top: 0.3rem;
+}
+
+}
+
+@media only screen and (max-width:480px){
+
+  .navbar{
+    height: auto;
+  }
+
+  .left-nav{
+    text-align: center;
+    display: block;
+  }
+
+  .btn{
+    margin: 5px auto;
+    display: block;
   }
 }
