@@ -1,17 +1,21 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
+import { ThemeContext } from "../contexts/ThemeContext";
 
 function TodoList(){
 
-    const [todoList,setTodoList] = useState([]);
+    const {todoList,setTodoList} = useContext(ThemeContext);
+
+    // const arr2 = arr.map((item) => item);
+
     const [todo,setTodo] = useState('');
     const [searchList,setSearchList] = useState([]);
     const todoArr = [];
-    let todolist = document.getElementById('tdlist');
+    let tdlist = document.getElementById('tdlist');
     let add = document.getElementById('todo-add');
 
     function handleAdd(e){
         if(add.value !== ''){
-            todolist.style.display = 'block';
+            tdlist.style.display = 'block';
             setTodoList([...todoList,todo]);
             // console.log(todoArr);
             setTodo('');
@@ -38,9 +42,9 @@ function TodoList(){
         });
 
         if(todoArr.length === 0){
-            todolist.style.display = 'none';
+            tdlist.style.display = 'none';
         }else{
-            todolist.style.display = 'block';
+            tdlist.style.display = 'block';
             setSearchList(todoArr);
         }
     }
