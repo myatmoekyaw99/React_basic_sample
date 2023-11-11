@@ -5,8 +5,6 @@ function TodoList(){
 
     const {todoList,setTodoList} = useContext(ThemeContext);
 
-    // const arr2 = arr.map((item) => item);
-
     const [todo,setTodo] = useState('');
     const [searchList,setSearchList] = useState([]);
     const todoArr = [];
@@ -41,10 +39,7 @@ function TodoList(){
             }
         });
 
-        if(todoArr.length === 0){
-            tdlist.style.display = 'none';
-        }else{
-            tdlist.style.display = 'block';
+        if(todoArr.length !== 0){
             setSearchList(todoArr);
         }
     }
